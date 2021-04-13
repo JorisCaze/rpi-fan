@@ -13,7 +13,7 @@ if __name__ == '__main__':
     fan = OutputDevice(gpio_pin)
 
     while True:
-        run = int(input("Start [1] / Stop [0]"))
+        run = int(input("Start[1] / Stop[0]? "))
         if run != 0:
             fan.on()
         else: 

@@ -55,7 +55,7 @@ The GPIO pins can be designated as input/output pins for use on the software sid
 However, those pins can not deliver more than 3.3V, i.e. it is not possible to run the fan at maximal speed.
 Note that it is still possible to use them for lower speed but since they are designed to deliver "high" current on long time period, it could lead to serious damages.
 
-To be able to power the fan with 5V, 150 mA we use the 5V power pin of the GPIO board and to control when to turn it on/off we employ a electronic switch based on a NPN transistor which is triggered by the signal of a GPIO pin.
+To be able to power the fan with 5V, 200 mA we use the 5V power pin of the GPIO board and to control when to turn it on/off we employ a electronic switch based on a NPN transistor which is triggered by the signal of a GPIO pin.
 
 The complete electronic circuit is the following:
 
@@ -68,7 +68,7 @@ Since the power source has the same voltage as the fan it is not necessary to lo
 However we have to choose the resistor value `Rb` according to the current flowing through the fan. 
 
 Before doing so, let's sum up how the transistor works.
-A NPN transistor has 3 pins, the collector `C`, the base `B` and the emmiter `E`. 
+A NPN transistor has 3 pins, the collector `C`, the base `B` and the emitter `E`. 
 When used as a switch, the element to be powered is plugged to the collector and the base pin allows to open/close the wire between the collector and the emitter.
 The current going through the base can be defined according to the transistor characterics and the collector current with the help of the current gain law.
 The current gain, designated as `beta` coefficient or `hFE` parameter is written as: `hFE = Ic / Ib`. The value of this parameter is defined by the properties of the transistor and it can be found in the specification datasheet. Usually for this use case of voltage and current we can consider a value around *50-100*.
