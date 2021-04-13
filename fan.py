@@ -15,7 +15,7 @@ speed/noise) and ground GPIO pin but this means that the fan will always run.
 from gpiozero import OutputDevice, CPUTemperature
 import time
 
-high_threshold = 52 # (degrees Celsius) Turn on fan temp.
+high_threshold = 50 # (degrees Celsius) Turn on fan temp.
 low_threshold = 45 # (degrees Celsius) Turn off fan temp.
 sleep_time = 15 # (seconds) How often we check the core temp.
 gpio_pin = 4 # Which GPIO pin used to control the fan
@@ -26,11 +26,8 @@ if __name__ == '__main__':
 
     while True:
         if cpu.temperature > high_threshold and not fan.value:
-            print('High temp')
             fan.on()
         elif fan.value and cpu.temperature < low_threshold:
-            print('Low temp')
             fan.off()
 
-        print(cpu.temperature)
         time.sleep(sleep_time)

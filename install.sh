@@ -10,17 +10,15 @@
 
 set -e
 
-cd "$(dirname "$0")/.."
-
-echo "Installing fan controller...\n"
+echo "Installing fan controller..."
 sudo cp fan.py /usr/local/bin/
 sudo chmod +x /usr/local/bin/fan.py
 
-echo "Starting fan controller...\n"
+echo "Starting fan controller..."
 sudo cp fan.sh /etc/init.d/
 sudo chmod +x /etc/init.d/fan.sh
 
 sudo update-rc.d fan.sh defaults
-sudo /etc/init.d/fan.sh start
+/etc/init.d/fan.sh start
 
 echo "Fan controller installed."
