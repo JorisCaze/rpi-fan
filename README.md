@@ -8,7 +8,7 @@
   <h3 align="center">Raspberry Pi fan control</h3>
 </p>
 
-Icons made by [Freepik]("https://www.freepik.com") from [flaticon]("https://www.flaticon.com/).
+Icons made by [Freepik](https://www.freepik.com) from [flaticon](https://www.flaticon.com/).
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
